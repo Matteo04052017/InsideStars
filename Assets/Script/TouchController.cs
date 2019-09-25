@@ -10,6 +10,7 @@ public class TouchController : MonoBehaviour
     public GameObject BackgroundGUI;
     public int SecondsForAction = 5;
     protected GameObject MoveThisObj;
+    protected bool DisplayGUIBool = false;
 
     private GameObject otherhand;
     private int retry = 12;
@@ -21,6 +22,9 @@ public class TouchController : MonoBehaviour
     private float lastCollision = -1;
     private float showLabelStartTime = -1;
 
+    private GameObject ResetGameObject;
+    private GameObject ProcBurningGameObject;
+
     private List<GameObject> toDisableWhenBackground;
 
     // Use this for initialization
@@ -30,8 +34,10 @@ public class TouchController : MonoBehaviour
         GameObject storage = GameObject.Find("Storage");
         for (int i = 0; i < storage.transform.childCount; i++)
             toDisableWhenBackground.Add(storage.transform.GetChild(i).gameObject);
-        toDisableWhenBackground.Add(GameObject.Find("Reset"));
-        toDisableWhenBackground.Add(GameObject.Find("ProcBurning"));
+        ResetGameObject = GameObject.Find("Reset");
+        ProcBurningGameObject = GameObject.Find("ProcBurning");
+        toDisableWhenBackground.Add(ResetGameObject);
+        toDisableWhenBackground.Add(ProcBurningGameObject);
         toDisableWhenBackground.Add(GameObject.Find("CubeH"));
         toDisableWhenBackground.Add(GameObject.Find("CubeHe3"));
 
@@ -89,6 +95,45 @@ public class TouchController : MonoBehaviour
                 rigidBody.velocity = Vector3.zero;
                 rigidBody.position = MoveThisObj.transform.position = MoveThisObj.transform.localPosition = gameObject.transform.position;
             }
+        }
+
+        DisplayGUI();
+    }
+
+    private void DisplayGUI()
+    {
+        float X = ResetGameObject.gameObject.transform.localPosition.x - (ResetGameObject.GetComponent<Renderer>().bounds.size.x / 2);
+        float Y = ResetGameObject.gameObject.transform.localPosition.y + (ResetGameObject.GetComponent<Renderer>().bounds.size.y / 2);
+        bool display = false;
+        if (gameObject.transform.localPosition.x > X && gameObject.transform.localPosition.y < Y)
+        {
+            DisplayTextGUI = "Reset in ";
+            display = true;
+        }
+        X = ProcBurningGameObject.gameObject.transform.localPosition.x + (ProcBurningGameObject.GetComponent<Renderer>().bounds.size.x / 2);
+        Y = ProcBurningGameObject.gameObject.transform.localPosition.y + (ProcBurningGameObject.GetComponent<Renderer>().bounds.size.y / 2);
+        if (gameObject.transform.localPosition.x < X && gameObject.transform.localPosition.y < Y)
+        {
+            DisplayTextGUI = "Change process in ";
+            display = true;
+        }
+        // start timing
+        if(!display)
+            DisplayGUIBool = false;
+        else
+        {
+            if (!DisplayGUIBool)
+            {
+                DisplayGUIBool = true;
+                showLabelStartTime = Time.time;
+                ShowBackgroung(true);
+            }
+        }
+
+        if (!DisplayGUIBool && !otherhand.GetComponent<TouchController>().DisplayGUIBool)
+        {
+            ShowBackgroung(false);
+            Destroy(textGO);
         }
     }
 
@@ -195,20 +240,20 @@ public class TouchController : MonoBehaviour
                 MoveThisObj = null;
         }
 
-        if (collision.gameObject.tag == "command")
-        {
-            showLabelStartTime = Time.time;
-            ShowBackgroung(true);
-            if (collision.gameObject.name == "Reset")
-            {
-                DisplayTextGUI = "Reset in ";
-            }
+        //if (collision.gameObject.tag == "command")
+        //{
+        //    showLabelStartTime = Time.time;
+        //    ShowBackgroung(true);
+        //    if (collision.gameObject.name == "Reset")
+        //    {
+        //        DisplayTextGUI = "Reset in ";
+        //    }
 
-            if (collision.gameObject.name == "ProcBurning")
-            {
-                DisplayTextGUI = "Change process in ";
-            }
-        }
+        //    if (collision.gameObject.name == "ProcBurning")
+        //    {
+        //        DisplayTextGUI = "Change process in ";
+        //    }
+        //}
 
         if (collision.gameObject.GetComponent<BoxCollider>() != null)
         {
@@ -216,14 +261,14 @@ public class TouchController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "command")
-        {
-            ShowBackgroung(false);
-            Destroy(textGO);
-        }
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "command")
+    //    {
+    //        ShowBackgroung(false);
+    //        Destroy(textGO);
+    //    }
+    //}
 
     private void ShowBackgroung(bool show)
     {
