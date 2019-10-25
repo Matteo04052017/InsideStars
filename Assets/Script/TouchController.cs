@@ -52,7 +52,7 @@ public class TouchController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BackgroundGUI != null && BackgroundGUI.activeSelf && !string.IsNullOrEmpty(DisplayTextGUI))
+        if (BackgroundGUI != null && BackgroundGUI.activeSelf && !string.IsNullOrEmpty(DisplayTextGUI) && DisplayGUIBool && !otherhand.GetComponent<TouchController>().DisplayGUIBool)
         {
             if (Time.time - showLabelStartTime > SecondsForAction)
             {
@@ -73,8 +73,12 @@ public class TouchController : MonoBehaviour
                 }
             }
 
-            string text2Display = DisplayTextGUI + (SecondsForAction - ((int)(Time.time - showLabelStartTime))) + " ss.";
-            ShowLabel(text2Display);
+            int sec = (SecondsForAction - ((int)(Time.time - showLabelStartTime)));
+            if (sec <= 5)
+            {
+                string text2Display = DisplayTextGUI + (SecondsForAction - ((int)(Time.time - showLabelStartTime))) + " ss.";
+                ShowLabel(text2Display);
+            }
         }
 
         if (MoveThisObj != null)
@@ -124,14 +128,15 @@ public class TouchController : MonoBehaviour
         {
             if (!DisplayGUIBool)
             {
-                DisplayGUIBool = true;
                 showLabelStartTime = Time.time;
+                DisplayGUIBool = true;
                 ShowBackgroung(true);
             }
         }
 
         if (!DisplayGUIBool && !otherhand.GetComponent<TouchController>().DisplayGUIBool)
         {
+            showLabelStartTime = float.MaxValue;
             ShowBackgroung(false);
             Destroy(textGO);
         }
