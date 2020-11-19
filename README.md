@@ -36,85 +36,19 @@ There are 4 unity scenes: `Intro`, `Simulation`, `HBurning`, `HeBurning`:
 │   ├───Pre-made (planets maps)
 │   ├───Prefab (basic prefab for nuclear elements)
 │   ├───Prefabs (sun and solar system prefabs)
-│   ├───ProceduralGrid 
-│   ├───RockVR
-│   │   ├───Common
-│   │   │   ├───Scripts
-│   │   │   └───Textures
-│   │   └───Video
-│   │       ├───Demo
-│   │       │   ├───Audio
-│   │       │   └───Scripts
-│   │       ├───Editor
-│   │       ├───Plugins
-│   │       │   ├───OSX
-│   │       │   │   └───VideoCaptureLib.bundle
-│   │       │   │       └───Contents
-│   │       │   │           ├───MacOS
-│   │       │   │           └───_CodeSignature
-│   │       │   └───Windows
-│   │       │       ├───x64
-│   │       │       └───x86
-│   │       ├───Resources
-│   │       │   ├───Materials
-│   │       │   └───Prefabs
-│   │       ├───Scripts
-│   │       │   ├───Base
-│   │       │   └───Utils
-│   │       └───Shaders
-│   ├───Scenes
-│   ├───Script
-│   ├───Shaders
-│   ├───SplashScreeniOs
-│   ├───spline
+│   ├───ProceduralGrid (not used)
+│   ├───RockVR (assets: https://assetstore.unity.com/publishers/24830)
+│   ├───Scenes (unity scenes)
+│   ├───Script (c# script for nuclear reaction simulations)
+│   ├───Shaders (shaders used for the prefab)
+│   ├───SplashScreeniOs (image for splash screen)
+│   ├───spline (spline interpolation)
 │   ├───Standard Assets
-│   │   ├───Editor
-│   │   ├───Particles
-│   │   │   ├───Legacy Particles
-│   │   │   └───Sources
-│   │   │       ├───Materials
-│   │   │       └───Textures
-│   │   └───Windows
-│   │       ├───Data
-│   │       └───Kinect
 │   ├───Standard Assets (Mobile)
-│   │   └───Shaders
-│   │       └───Miscellaneous Shaders
-│   ├───StreamingAssets
-│   │   └───RockVR
-│   │       ├───FFmpeg
-│   │       │   ├───OSX
-│   │       │   └───Windows
-│   │       └───Spatial Media Metadata Injector
-│   │           ├───OSX
-│   │           └───Windows
-│   ├───Texture
-│   ├───VolumetricLines
-│   │   ├───ExampleScenes
-│   │   │   ├───ExampleMaterials
-│   │   │   ├───ExamplePrefabs
-│   │   │   ├───ExampleScripts
-│   │   │   ├───ExampleTerrain
-│   │   │   └───ExampleTextures
-│   │   ├───Materials
-│   │   ├───Prefabs
-│   │   ├───Scripts
-│   │   │   └───Utils
-│   │   └───Shaders
-│   └───_MK
-│       └───MKGlassFree
-│           ├───Demo
-│           │   ├───Materials
-│           │   └───Textures
-│           ├───Editor
-│           └───Shader
-│               └───Inc
-│                   ├───Common
-│                   ├───Forward
-│                   ├───Meta
-│                   ├───Surface
-│                   └───VertexLit
-├───Library
-├───Packages
-├───ProjectSettings
+│   ├───StreamingAssets (assets: https://assetstore.unity.com/publishers/24830)
+│   ├───Texture (images for planets of the solar system)
+│   ├───VolumetricLines (https://assetstore.unity.com/packages/tools/particles-effects/volumetric-lines-29160)
+├───Library (unity private) 
+├───Packages (unity private)
+├───ProjectSettings (unity private)
 ```
