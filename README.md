@@ -19,59 +19,24 @@ There are 4 unity scenes: `Intro`, `Simulation`, `HBurning`, `HeBurning`:
 
 ```
 ├───Assets
-│   ├───AvatarsDemo
-│   │   ├───Cubeman
-│   │   │   ├───ColorCube.fbm
-│   │   │   └───Materials
-│   │   ├───Skyboxes
-│   │   │   └───Textures
-│   │   │       └───Sunny1
-│   │   └───TestModels
-│   │       ├───Grid
-│   │       │   ├───Materials
-│   │       │   └───Textures
-│   │       └───U_Character
-│   │           └───Materials
-│   ├───DepthColliderDemo
-│   │   ├───Materials
-│   │   └───Scripts
-│   ├───DL_Fantasy_RPG_Effects
-│   │   ├───material
-│   │   ├───prefab
-│   │   └───texture
-│   │       └───Materials
-│   ├───GesturesDemo
-│   │   ├───Materials
-│   │   ├───Scripts
-│   │   └───SlideTextures
-│   ├───GUI
-│   ├───KinectScripts
-│   │   ├───Cubeman
-│   │   ├───Filters
-│   │   └───Samples
-│   ├───Material
-│   ├───Materials
-│   ├───MilkyWay
-│   │   ├───Material
-│   │   ├───Scenes
-│   │   └───Texture
-│   ├───OutlineEffect
-│   │   └───Demo
-│   ├───OverlayDemo
-│   │   ├───Materials
-│   │   └───Scripts
-│   ├───Pianeti
-│   │   └───Materials
-│   ├───PlaymakerKinectActions
-│   ├───Plugins
-│   │   ├───Metro
-│   │   ├───x86
-│   │   └───x86_64
-│   ├───Pre-made
-│   │   └───compressed
-│   ├───Prefab
-│   ├───Prefabs
-│   ├───ProceduralGrid
+│   ├───AvatarsDemo (kinect v2 sdk)
+│   ├───DepthColliderDemo (kinect v2 sdk)
+│   ├───DL_Fantasy_RPG_Effects (https://assetstore.unity.com/packages/vfx/particles/dl-fantasy-rpg-effects-68246)
+│   ├───GesturesDemo (kinect v2 sdk)
+│   ├───GUI (not used)
+│   ├───KinectScripts (kinect v2 sdk)
+│   ├───Material (basic materials for hydrogen)
+│   ├───Materials (solar system materials)
+│   ├───MilkyWay  (https://assetstore.unity.com/packages/2d/textures-materials/milky-way-skybox-94001)
+│   ├───OutlineEffect (https://www.assetstore.unity3d.com/#!/content/86481)
+│   ├───OverlayDemo (kinect v2 sdk)
+│   ├───Pianeti (Saturn and Uran rings)
+│   ├───PlaymakerKinectActions (not used)
+│   ├───Plugins (kinect v2 sdk)
+│   ├───Pre-made (planets maps)
+│   ├───Prefab (basic prefab for nuclear elements)
+│   ├───Prefabs (sun and solar system prefabs)
+│   ├───ProceduralGrid 
 │   ├───RockVR
 │   │   ├───Common
 │   │   │   ├───Scripts
