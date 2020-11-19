@@ -1,6 +1,6 @@
 ## InsideStars
 
-This project is intended for astrophysicists that want to explain what is happening inside a Star. With the help of the kinect sensor, the user of the application can draw nuclear elements (like hydrogen) and make the react so that the nuclear rections of a star can be described to the audience. 
+This project is intended for astrophysicists that want to explain by visualizing the thermonuclear fusion helium burning within a star: the user can grab the nucleons in the screen (with the help of a kinect sensor) and can make them interact reproducing the nuclear reactions of the star in details highlighting the result of the fusion, that is the new element produced and, for the most interested, the elementary particles and the photons emitted.
 
 This project has been presented in Genova. A demonstration can be found [here](https://www.youtube.com/watch?v=tvEsc-n5Dkc)
 
