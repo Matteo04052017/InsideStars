@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Second2Change: 15
+  kinect: 0
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0

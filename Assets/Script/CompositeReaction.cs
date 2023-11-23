@@ -23,6 +23,8 @@ public class CompositeReaction : MonoBehaviour
 
     private List<Vector3> childPosition = new List<Vector3>();
 
+    private System.Random random = new System.Random();
+
     // Use this for initialization
     void Start()
     {
@@ -150,10 +152,10 @@ public class CompositeReaction : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
 
-        if (gameObject.tag == "Be8" && collision.gameObject.tag == "He4" && scene.name == "HeBurning")
+        if (gameObject.tag == "Be8" && collision.gameObject.tag == "He4" && scene.name.StartsWith("HeBurning"))
             C12Reaction(collision);
 
-        if (gameObject.tag == "He4" && collision.gameObject.tag == "He4" && scene.name == "HeBurning")
+        if (gameObject.tag == "He4" && collision.gameObject.tag == "He4" && scene.name.StartsWith("HeBurning"))
             Be8Rection(collision);
 
         if (gameObject.tag == "D" && collision.gameObject.transform.childCount == 0)
@@ -163,7 +165,7 @@ public class CompositeReaction : MonoBehaviour
         if (gameObject.tag == "He3" && collision.gameObject.tag == "He3")
             Elio4Reaction(collision);
 
-        if (gameObject.tag == "C12" && collision.gameObject.tag == "He4" && scene.name == "HeBurning")
+        if (gameObject.tag == "C12" && collision.gameObject.tag == "He4" && scene.name.StartsWith("HeBurning"))
             O16Reaction(collision);
     }
 
@@ -173,6 +175,7 @@ public class CompositeReaction : MonoBehaviour
             return;
 
         GameObject o16 = Instantiate(O16, gameObject.transform.position, Quaternion.identity);
+        o16.name = o16.name + random.NextDouble().ToString(".0000");
         //if (Simulate)
         //    c12.transform.localScale = MyParticleScript.SimulationScale;
         o16.GetComponent<CompositeReaction>().Simulate = Simulate;
@@ -189,6 +192,7 @@ public class CompositeReaction : MonoBehaviour
             return;
 
         GameObject c12 = Instantiate(C12, gameObject.transform.position, Quaternion.identity);
+        c12.name = c12.name + random.NextDouble().ToString(".0000");
         //if (Simulate)
         //    c12.transform.localScale = MyParticleScript.SimulationScale;
         c12.GetComponent<CompositeReaction>().Simulate = Simulate;
@@ -221,11 +225,13 @@ public class CompositeReaction : MonoBehaviour
     {
         float scaleFactor = .9f;
         GameObject he4 = Instantiate(He4, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - (He4.gameObject.transform.localScale.y / scaleFactor), 0), Quaternion.identity);
+        he4.name = he4.name + random.NextDouble().ToString(".0000");
         //if (Simulate)
         //    he4.transform.localScale = MyParticleScript.SimulationScale;
         he4.GetComponent<CompositeReaction>().Simulate = Simulate;
         he4.GetComponent<Rigidbody>().AddTorque(transform.up * UnityEngine.Random.Range(-1, 1));
         he4 = Instantiate(He4, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + (He4.gameObject.transform.localScale.y / scaleFactor), 0), Quaternion.identity);
+        he4.name = he4.name + random.NextDouble().ToString(".0000");
         //if (Simulate)
         //    he4.transform.localScale = MyParticleScript.SimulationScale;
         he4.GetComponent<CompositeReaction>().Simulate = Simulate;
@@ -241,6 +247,7 @@ public class CompositeReaction : MonoBehaviour
         onCommand = true;
 
         GameObject be8 = Instantiate(Be8, gameObject.transform.position, gameObject.transform.rotation);
+        be8.name = be8.name + random.NextDouble().ToString(".0000");
         if (Simulate)
             be8.transform.localScale = MyParticleScript.SimulationScale;
         be8.GetComponent<CompositeReaction>().Simulate = Simulate;
@@ -254,6 +261,7 @@ public class CompositeReaction : MonoBehaviour
     private void Elio3Reaction(Collision collision)
     {
         GameObject he3 = Instantiate(He3, gameObject.transform.position, gameObject.transform.rotation);
+        he3.name = he3.name + random.NextDouble().ToString(".0000");
         he3.tag = "He3";
         he3.GetComponent<CompositeReaction>().Simulate = Simulate;
         Destroy(collision.gameObject);
@@ -298,7 +306,10 @@ public class CompositeReaction : MonoBehaviour
                 //    ForceZ = UnityEngine.Random.Range(0, MyParticleScript.MaxZ.transform.position.z);
 
                 item.SetParent(null);
+                item.name = item.name + random.NextDouble().ToString(".0000");
                 item.gameObject.AddComponent<Rigidbody>();
+                item.gameObject.AddComponent<MoveWithMouse>();
+                item.gameObject.layer = LayerMask.NameToLayer("Hands");
                 item.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 if (first)
                 {

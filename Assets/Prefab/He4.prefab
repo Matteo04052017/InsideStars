@@ -85,7 +85,8 @@ GameObject:
   - component: {fileID: 54797841647282834}
   - component: {fileID: 114250267345310524}
   - component: {fileID: 114009983681813180}
-  m_Layer: 0
+  - component: {fileID: 114156540123059334}
+  m_Layer: 9
   m_Name: He4
   m_TagString: He4
   m_Icon: {fileID: 0}
@@ -496,6 +497,17 @@ MonoBehaviour:
   Elettrone: {fileID: 1496979923111682, guid: 00730d36f9503ab439795ff6ddb8079d, type: 2}
   Positrone: {fileID: 1495580862462316, guid: e5bb095551f41a5409360b43728bfd1c, type: 2}
   Composite: {fileID: 1021414885964250, guid: 5f2cf4e8848b70944b8022118b39e4c8, type: 2}
+--- !u!114 &114156540123059334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1942879683140776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73d9f39e1bfd064db0534f492985028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114250267345310524
 MonoBehaviour:
   m_ObjectHideFlags: 1

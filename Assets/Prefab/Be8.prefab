@@ -125,7 +125,8 @@ GameObject:
   - component: {fileID: 54669447466851914}
   - component: {fileID: 114065053243565912}
   - component: {fileID: 114528264476113184}
-  m_Layer: 0
+  - component: {fileID: 114650344160167686}
+  m_Layer: 9
   m_Name: Be8
   m_TagString: Be8
   m_Icon: {fileID: 0}
@@ -932,6 +933,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0.5
   Simulate: 0
+--- !u!114 &114650344160167686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603969665735730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73d9f39e1bfd064db0534f492985028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114698962933398388
 MonoBehaviour:
   m_ObjectHideFlags: 1

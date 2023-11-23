@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SimulationChangeScene : MonoBehaviour {
     public int Second2Change = 30;
-    private float StartTime; 
+    private float StartTime;
+	public bool kinect = true;
 	// Use this for initialization
 	void Start () {
         StartTime = Time.time;
@@ -14,6 +15,10 @@ public class SimulationChangeScene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Time.time - StartTime > Second2Change)
-            SceneManager.LoadScene("HBurning");
-	}
+			if (kinect)
+				SceneManager.LoadScene("HBurning");
+            else
+                SceneManager.LoadScene("HBurning_nokinect");
+
+    }
 }

@@ -141,6 +141,7 @@ public class DeuterioReaction : MonoBehaviour
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point;
         GameObject composite = Instantiate(Composite, pos, rot);
+        composite.name = composite.name + new System.Random().NextDouble().ToString(".00");
         composite.GetComponent<CompositeReaction>().Simulate = Simulate;
         gameObject.transform.SetParent(composite.transform);
         collision.gameObject.transform.SetParent(composite.transform);

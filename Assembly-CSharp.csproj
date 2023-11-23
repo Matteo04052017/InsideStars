@@ -101,6 +101,7 @@
      <Compile Include="Assets\Script\BodySourceView.cs" />
      <Compile Include="Assets\Script\CloseAppOnEsc.cs" />
      <Compile Include="Assets\Script\CompositeReaction.cs" />
+     <Compile Include="Assets\Script\CreateObjectOnClick.cs" />
      <Compile Include="Assets\Script\CreateScreenColliders.cs" />
      <Compile Include="Assets\Script\DeuterioReaction.cs" />
      <Compile Include="Assets\Script\HandsSafeLoadKinectManager.cs" />
@@ -112,6 +113,7 @@
      <Compile Include="Assets\Script\ProcessLabel.cs" />
      <Compile Include="Assets\Script\RandomRotation.cs" />
      <Compile Include="Assets\Script\ResetLabel.cs" />
+     <Compile Include="Assets\Script\SceneLogic.cs" />
      <Compile Include="Assets\Script\SelectObjAndAddForce.cs" />
      <Compile Include="Assets\Script\ShowLabel.cs" />
      <Compile Include="Assets\Script\SimulationChangeScene.cs" />

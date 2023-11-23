@@ -245,7 +245,8 @@ GameObject:
   - component: {fileID: 54708455053248948}
   - component: {fileID: 114693701527239658}
   - component: {fileID: 114019899362073754}
-  m_Layer: 0
+  - component: {fileID: 114770566587964402}
+  m_Layer: 9
   m_Name: C12
   m_TagString: C12
   m_Icon: {fileID: 0}
@@ -1381,6 +1382,17 @@ MonoBehaviour:
   C12: {fileID: 1651112788238098}
   O16: {fileID: 1153060073756066, guid: 6db3d6458b036f34992579d30b002688, type: 2}
   Be8ReactionTime: 10
+--- !u!114 &114770566587964402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651112788238098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73d9f39e1bfd064db0534f492985028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114825176953787166
 MonoBehaviour:
   m_ObjectHideFlags: 1

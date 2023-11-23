@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Simulation.unity
     guid: e4ba9b9665aa23b45ac559f311182d22
   - enabled: 1
-    path: Assets/Scenes/HBurning.unity
-    guid: ae417ba2605fd464dba486be76ebfc3e
+    path: Assets/Scenes/HeBurning_nokinect.unity
+    guid: 7c53ea3159fb3dd498e3db87219484cc
   - enabled: 1
-    path: Assets/Scenes/HeBurning.unity
-    guid: 8b41d37354abdc047a67132238ffc1d1
+    path: Assets/Scenes/HBurning_nokinect.unity
+    guid: 1e1ef4c265f444947bb295e3b08b515a
   m_configObjects: {}
